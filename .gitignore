@@ -1,4 +1,4 @@
 venv/
 virtualenv/
 __pycache__/
-data/
+data/*
