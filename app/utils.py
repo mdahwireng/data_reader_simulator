@@ -2,7 +2,14 @@ import os
 import random
 import string
 import pickle
+from zxcvbn import zxcvbn
 
+def run_zxcvbn(psswd):
+    if not psswd:
+        return None
+    if len(psswd) > 72:
+        return zxcvbn(psswd[:72])
+    return zxcvbn(psswd)
 
 
 def find_non_ascii_char(passwords,non_ascii_chars):
@@ -95,3 +102,4 @@ def pickle_dataframe(dataframe=None, filepath: str = 'data.pkl', mode: str = 'sa
         except Exception as e:
             print(f"Error loading DataFrame from '{filepath}': {e}")
             return None
+        
