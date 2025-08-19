@@ -95,7 +95,7 @@ password_df['size_byte'] = password_df['passwords'].apply(lambda x : len(x.encod
 # serialize outputs password_df, sesquences_password_df, spsp_chars, rmv_leaked, rmv_rock
 logging.info("Serializing outputs...")
 
-root_path = '/data/'
+root_path = './data/'
 outputs_str = ['password_df', 'sequences_password_df', 'sp_chars', 'rmv_leaked', 'rmv_rock']
 output_paths = [root_path+o+'.pkl' for o in outputs_str]
 

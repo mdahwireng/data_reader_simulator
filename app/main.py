@@ -2,7 +2,7 @@ import os
 import subprocess
 
 
-root_path = '/data/'
+root_path = './data/'
 outputs_str = ['password_df', 'sequences_password_df', 'sp_chars', 'rmv_leaked', 'rmv_rock']
 # list data directory to check for existance of pickled data
 
