@@ -5,7 +5,14 @@ import pandas as pd
 from utils import run_zxcvbn, find_non_ascii_char, simulate_passwords, read_file, pickle_dataframe
 from TreatZxcvbn import TreatZxcvbn
 
+# Configure basic logging to the console
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+# Log messages
+logging.debug("This is a debug message.")
+logging.info("This is an info message.")
+logging.warning("This is a warning message.")
+logging.error("This is an error message.")
 
 # Simulation parameters
 num_passwords = 100000
