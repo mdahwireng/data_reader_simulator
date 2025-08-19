@@ -101,8 +101,7 @@ password_table_cols = ['passwords',
                          'offline_slow_hashing_1e4_per_second',
                          'offline_fast_hashing_1e10_per_second',
                          'score',
-                         'entropy',
-                         'size_byte']
+                         'entropy']
 
 password_df = password_df.merge(zxcvbn_password_df, left_on=['passwords'], right_on=['password'])[password_table_cols]
 
