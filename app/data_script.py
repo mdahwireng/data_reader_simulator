@@ -103,8 +103,9 @@ password_df['size_byte'] = password_df['passwords'].apply(lambda x : len(x.encod
 logging.info("Serializing outputs...")
 
 root_path = './data/'
+outputs_df = [password_df, sequences_password_df, sp_chars, rmv_leaked, rmv_rock]
 outputs_str = ['password_df', 'sequences_password_df', 'sp_chars', 'rmv_leaked', 'rmv_rock']
 output_paths = [root_path+o+'.pkl' for o in outputs_str]
 
-for d,p in zip(outputs_str,output_paths):
+for d,p in zip(outputs_df,output_paths):
     pickle_dataframe(dataframe=d, filepath=p, mode='save')
