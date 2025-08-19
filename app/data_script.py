@@ -92,7 +92,19 @@ zxcvbn_password_df['entropy'] = zxcvbn_password_df['guesses'].apply(lambda x : m
 
 # merge with password_df
 logging.info("Merging zxcvbn password DataFrame with password_df...")
-password_df = password_df.merge(zxcvbn_password_df, left_on=['passwords'], right_on=['password'])
+password_table_cols = ['passwords',
+                         'source',
+                         'password_len',
+                         'guesses',
+                         'guesses_log10',
+                         'calc_time',
+                         'offline_slow_hashing_1e4_per_second',
+                         'offline_fast_hashing_1e10_per_second',
+                         'score',
+                         'entropy',
+                         'size_byte']
+
+password_df = password_df.merge(zxcvbn_password_df, left_on=['passwords'], right_on=['password'])[password_table_cols]
 
 # calculate the bytes of the passwords
 logging.info("Calculating bytes of passwords...")
