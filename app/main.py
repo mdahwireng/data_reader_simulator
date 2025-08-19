@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 
 
 root_path = './data/'
@@ -14,4 +15,4 @@ if files_exist:
 
 else:
     print("Pickled data files do not exist in the data directory. Running the data script.")
-    subprocess.run(['python3', 'data_script.py'], check=True)
+    subprocess.run(['python3', 'data_script.py'], stdout=sys.stdout, stderr=sys.stderr, check=True)
