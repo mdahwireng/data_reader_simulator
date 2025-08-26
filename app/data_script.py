@@ -97,7 +97,7 @@ password_table_cols = ['passwords',
                          'password_len',
                          'guesses',
                          'guesses_log10',
-                         'calc_time',
+                         'calc_time_micros',
                          'offline_slow_hashing_1e4_per_second',
                          'offline_fast_hashing_1e10_per_second',
                          'score',
@@ -109,6 +109,11 @@ password_df = password_df.merge(zxcvbn_password_df, left_on=['passwords'], right
 logging.info("Calculating bytes of passwords...")
 password_df['size_byte'] = password_df['passwords'].apply(lambda x : len(x.encode('UTF-8')) if x else None)
 
+
+# calculate calc_time in microsecs
+logging.info("Calculating calc_time in microseconds...")
+password_df['calc_time_micros'] = password_df['calc_time'].apply(lambda x : x*1e6 if x else None)
+password_df.drop(columns=['calc_time'], inplace=True)
 
 # serialize outputs password_df, sesquences_password_df, spsp_chars, rmv_leaked, rmv_rock
 logging.info("Serializing outputs...")

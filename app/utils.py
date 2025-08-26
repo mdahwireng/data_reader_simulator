@@ -69,8 +69,8 @@ def pickle_dataframe(dataframe=None, filepath: str = 'data.pkl', mode: str = 'sa
         mode (str): The operation mode. Must be 'save' or 'load'. Defaults to 'save'.
 
     Returns:
-        pd.DataFrame or None: If mode is 'load', returns the loaded DataFrame.
-                              If mode is 'save' or an error occurs, returns None.
+        pd.DataFrame or None: If mode is 'load', turns the loaded DataFrame.
+                              If mode is 'save' or an error occurs, turns None.
 
     Raises:
         ValueError: If an invalid mode is provided or if 'save' mode is
