@@ -15,7 +15,7 @@ logging.warning("This is a warning message.")
 logging.error("This is an error message.")
 
 # Simulation parameters
-num_passwords = 100000
+num_passwords = 1000000
 min_length = 8
 max_length = 20
 
@@ -97,7 +97,7 @@ password_table_cols = ['passwords',
                          'password_len',
                          'guesses',
                          'guesses_log10',
-                         'calc_time_micros',
+                         'calc_time',
                          'offline_slow_hashing_1e4_per_second',
                          'offline_fast_hashing_1e10_per_second',
                          'score',
